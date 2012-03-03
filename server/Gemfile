@@ -9,7 +9,6 @@ gem 'em-websocket'
 gem 'haml'
 gem 'sinatra'
 gem 'thin'
-gem 'socket'
 
 # require 'rubygems'
 # require 'em-websocket'
