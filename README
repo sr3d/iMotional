@@ -1,0 +1,11 @@
+I.  Running Server
+==================
+1.  cd to server/
+2.  run  ./server
+3.  you'll see the prompt
+
+
+
+II. Connect to Server
+======================
+1.  Open a new TCP connection to 

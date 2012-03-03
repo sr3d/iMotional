@@ -1,0 +1,19 @@
+source :rubygems 
+
+# gem 'guard'
+# gem 'rb-inotify', :require => false
+# gem 'rb-fsevent', :require => false
+# gem 'rb-fchange', :require => false
+
+gem 'em-websocket'
+gem 'haml'
+gem 'sinatra'
+gem 'thin'
+gem 'socket'
+
+# require 'rubygems'
+# require 'em-websocket'
+# require 'haml'
+# require 'sinatra'
+# require 'thin'
+# require 'socket''
