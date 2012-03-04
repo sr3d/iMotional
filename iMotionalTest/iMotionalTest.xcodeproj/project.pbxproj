@@ -1,0 +1,327 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05F7C20B1502DAF600FCE9FE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F7C20A1502DAF600FCE9FE /* UIKit.framework */; };
+		05F7C20D1502DAF600FCE9FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F7C20C1502DAF600FCE9FE /* Foundation.framework */; };
+		05F7C20F1502DAF600FCE9FE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F7C20E1502DAF600FCE9FE /* CoreGraphics.framework */; };
+		05F7C2151502DAF600FCE9FE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 05F7C2131502DAF600FCE9FE /* InfoPlist.strings */; };
+		05F7C2171502DAF600FCE9FE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F7C2161502DAF600FCE9FE /* main.m */; };
+		05F7C21B1502DAF600FCE9FE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F7C21A1502DAF600FCE9FE /* AppDelegate.m */; };
+		05F7C23F1502E0D900FCE9FE /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 05F7C2321502E0D900FCE9FE /* FBDialog.bundle */; };
+		05F7C2401502E0D900FCE9FE /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05F7C2381502E0D900FCE9FE /* libfacebook_ios_sdk.a */; };
+		05F7C2431502E11100FCE9FE /* FacebookServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F7C2421502E11000FCE9FE /* FacebookServer.m */; };
+		05F7C2461502E2F800FCE9FE /* FacebookTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F7C2451502E2F600FCE9FE /* FacebookTestViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		05F7C2061502DAF600FCE9FE /* iMotionalTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iMotionalTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F7C20A1502DAF600FCE9FE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		05F7C20C1502DAF600FCE9FE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		05F7C20E1502DAF600FCE9FE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		05F7C2121502DAF600FCE9FE /* iMotionalTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iMotionalTest-Info.plist"; sourceTree = "<group>"; };
+		05F7C2141502DAF600FCE9FE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		05F7C2161502DAF600FCE9FE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		05F7C2181502DAF600FCE9FE /* iMotionalTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iMotionalTest-Prefix.pch"; sourceTree = "<group>"; };
+		05F7C2191502DAF600FCE9FE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		05F7C21A1502DAF600FCE9FE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		05F7C2301502E0D900FCE9FE /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
+		05F7C2311502E0D900FCE9FE /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
+		05F7C2321502E0D900FCE9FE /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
+		05F7C2331502E0D900FCE9FE /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
+		05F7C2341502E0D900FCE9FE /* FBFrictionlessRequestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFrictionlessRequestSettings.h; sourceTree = "<group>"; };
+		05F7C2351502E0D900FCE9FE /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginDialog.h; sourceTree = "<group>"; };
+		05F7C2361502E0D900FCE9FE /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequest.h; sourceTree = "<group>"; };
+		05F7C2371502E0D900FCE9FE /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		05F7C2381502E0D900FCE9FE /* libfacebook_ios_sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfacebook_ios_sdk.a; sourceTree = "<group>"; };
+		05F7C2391502E0D900FCE9FE /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		05F7C23A1502E0D900FCE9FE /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		05F7C23B1502E0D900FCE9FE /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		05F7C23C1502E0D900FCE9FE /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		05F7C23D1502E0D900FCE9FE /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		05F7C23E1502E0D900FCE9FE /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		05F7C2411502E10F00FCE9FE /* FacebookServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookServer.h; sourceTree = "<group>"; };
+		05F7C2421502E11000FCE9FE /* FacebookServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookServer.m; sourceTree = "<group>"; };
+		05F7C2441502E2F500FCE9FE /* FacebookTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookTestViewController.h; sourceTree = "<group>"; };
+		05F7C2451502E2F600FCE9FE /* FacebookTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookTestViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		05F7C2031502DAF600FCE9FE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05F7C20B1502DAF600FCE9FE /* UIKit.framework in Frameworks */,
+				05F7C20D1502DAF600FCE9FE /* Foundation.framework in Frameworks */,
+				05F7C20F1502DAF600FCE9FE /* CoreGraphics.framework in Frameworks */,
+				05F7C2401502E0D900FCE9FE /* libfacebook_ios_sdk.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		05F7C1FB1502DAF600FCE9FE = {
+			isa = PBXGroup;
+			children = (
+				05F7C2101502DAF600FCE9FE /* iMotionalTest */,
+				05F7C2091502DAF600FCE9FE /* Frameworks */,
+				05F7C2071502DAF600FCE9FE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		05F7C2071502DAF600FCE9FE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				05F7C2061502DAF600FCE9FE /* iMotionalTest.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		05F7C2091502DAF600FCE9FE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				05F7C20A1502DAF600FCE9FE /* UIKit.framework */,
+				05F7C20C1502DAF600FCE9FE /* Foundation.framework */,
+				05F7C20E1502DAF600FCE9FE /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		05F7C2101502DAF600FCE9FE /* iMotionalTest */ = {
+			isa = PBXGroup;
+			children = (
+				05F7C2411502E10F00FCE9FE /* FacebookServer.h */,
+				05F7C2421502E11000FCE9FE /* FacebookServer.m */,
+				05F7C22F1502E0D800FCE9FE /* facebook-ios-sdk */,
+				05F7C2191502DAF600FCE9FE /* AppDelegate.h */,
+				05F7C21A1502DAF600FCE9FE /* AppDelegate.m */,
+				05F7C2441502E2F500FCE9FE /* FacebookTestViewController.h */,
+				05F7C2451502E2F600FCE9FE /* FacebookTestViewController.m */,
+				05F7C2111502DAF600FCE9FE /* Supporting Files */,
+			);
+			path = iMotionalTest;
+			sourceTree = "<group>";
+		};
+		05F7C2111502DAF600FCE9FE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				05F7C2121502DAF600FCE9FE /* iMotionalTest-Info.plist */,
+				05F7C2131502DAF600FCE9FE /* InfoPlist.strings */,
+				05F7C2161502DAF600FCE9FE /* main.m */,
+				05F7C2181502DAF600FCE9FE /* iMotionalTest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		05F7C22F1502E0D800FCE9FE /* facebook-ios-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				05F7C2301502E0D900FCE9FE /* Facebook.h */,
+				05F7C2311502E0D900FCE9FE /* FBConnect.h */,
+				05F7C2321502E0D900FCE9FE /* FBDialog.bundle */,
+				05F7C2331502E0D900FCE9FE /* FBDialog.h */,
+				05F7C2341502E0D900FCE9FE /* FBFrictionlessRequestSettings.h */,
+				05F7C2351502E0D900FCE9FE /* FBLoginDialog.h */,
+				05F7C2361502E0D900FCE9FE /* FBRequest.h */,
+				05F7C2371502E0D900FCE9FE /* JSON.h */,
+				05F7C2381502E0D900FCE9FE /* libfacebook_ios_sdk.a */,
+				05F7C2391502E0D900FCE9FE /* NSObject+SBJSON.h */,
+				05F7C23A1502E0D900FCE9FE /* NSString+SBJSON.h */,
+				05F7C23B1502E0D900FCE9FE /* SBJSON.h */,
+				05F7C23C1502E0D900FCE9FE /* SBJsonBase.h */,
+				05F7C23D1502E0D900FCE9FE /* SBJsonParser.h */,
+				05F7C23E1502E0D900FCE9FE /* SBJsonWriter.h */,
+			);
+			path = "facebook-ios-sdk";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		05F7C2051502DAF600FCE9FE /* iMotionalTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 05F7C21E1502DAF600FCE9FE /* Build configuration list for PBXNativeTarget "iMotionalTest" */;
+			buildPhases = (
+				05F7C2021502DAF600FCE9FE /* Sources */,
+				05F7C2031502DAF600FCE9FE /* Frameworks */,
+				05F7C2041502DAF600FCE9FE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iMotionalTest;
+			productName = iMotionalTest;
+			productReference = 05F7C2061502DAF600FCE9FE /* iMotionalTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05F7C1FD1502DAF600FCE9FE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 05F7C2001502DAF600FCE9FE /* Build configuration list for PBXProject "iMotionalTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 05F7C1FB1502DAF600FCE9FE;
+			productRefGroup = 05F7C2071502DAF600FCE9FE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				05F7C2051502DAF600FCE9FE /* iMotionalTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		05F7C2041502DAF600FCE9FE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05F7C2151502DAF600FCE9FE /* InfoPlist.strings in Resources */,
+				05F7C23F1502E0D900FCE9FE /* FBDialog.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		05F7C2021502DAF600FCE9FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				05F7C2171502DAF600FCE9FE /* main.m in Sources */,
+				05F7C21B1502DAF600FCE9FE /* AppDelegate.m in Sources */,
+				05F7C2431502E11100FCE9FE /* FacebookServer.m in Sources */,
+				05F7C2461502E2F800FCE9FE /* FacebookTestViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		05F7C2131502DAF600FCE9FE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				05F7C2141502DAF600FCE9FE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		05F7C21C1502DAF600FCE9FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		05F7C21D1502DAF600FCE9FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		05F7C21F1502DAF600FCE9FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMotionalTest/iMotionalTest-Prefix.pch";
+				INFOPLIST_FILE = "iMotionalTest/iMotionalTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/iMotionalTest/facebook-ios-sdk\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		05F7C2201502DAF600FCE9FE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iMotionalTest/iMotionalTest-Prefix.pch";
+				INFOPLIST_FILE = "iMotionalTest/iMotionalTest-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/iMotionalTest/facebook-ios-sdk\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		05F7C2001502DAF600FCE9FE /* Build configuration list for PBXProject "iMotionalTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05F7C21C1502DAF600FCE9FE /* Debug */,
+				05F7C21D1502DAF600FCE9FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		05F7C21E1502DAF600FCE9FE /* Build configuration list for PBXNativeTarget "iMotionalTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				05F7C21F1502DAF600FCE9FE /* Debug */,
+				05F7C2201502DAF600FCE9FE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05F7C1FD1502DAF600FCE9FE /* Project object */;
+}
