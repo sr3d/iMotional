@@ -57,27 +57,30 @@ $(function(){
    var vx = vy = 0;
    var dx = dy = 0;
    socket.onmessage = function(msg) {
+	  
      count++;
      var data = msg.data;
      sl.log('data', data);
      acceleration = data.split(',');
+		
      if(acceleration.length < 2) return;
-
+   	 acc
      var t1 = new Date;
-     var dT = (t1 - t);
+     var dT = (t1 - t)/1000;
      var dT2 = (t1 - t) * (t1 - t) / 1000000;
-     t = t1;
-
-     dx += vx * dT + 0.5 * acceleration[0] * dT2;
-     dy += vy * dT + 0.5 * acceleration[1] * dT2;
      
-     vx = vx + acceleration[0] * dT / 1000;
-     vy = vy + acceleration[1] * dT / 1000;
+
+     dx = vx * dT + 0.5 * acceleration[0] * dT2* 3779;
+     dy = vy * dT + 0.5 * acceleration[1] * dT2* 3779;
+     
+     vx = vx + acceleration[0] * 3779* dT ;
+     vy = vy + acceleration[1] * 3779* dT ;
      
      ball.x += dx;
      ball.y += dy;
      
-     console.log("%o", {data: data, dy: dy, dx: dx, vx: vx, vy: vy, x: ball.x, y: ball.y});
+     console.log("%o", {data: data, dy: dy, dx: dx, vx: vx, vy: vy, x: ball.x, y: ball.y, deltaT: dT, time: t});
+		 t = t1;
      sl.log("x,y", JSON.stringify({x: ball.x, y: ball.y}));
    };
 
