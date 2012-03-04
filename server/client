@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+require "rubygems"
+require 'socket'
+
+include Math
+
+server = TCPSocket.new 'localhost', '8484'
+
+degree = 0
+
+x0 = 200
+y0 = 200
+r  = 50
+FPS = 2
+
+while(true)
+  degree += 10
+  if(degree > 360) 
+    degree = 0
+  end
+  x = x0 + Math.cos( degree * Math::PI / 180 ) * r
+  y = y0 + Math.sin( degree * Math::PI / 180 ) * r
+  server.puts [x,y].join(",")
+  
+  # puts degree.to_s + " -- " + [x,y].join(",")
+
+  sleep(1/FPS)
+end

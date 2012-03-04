@@ -2,37 +2,38 @@
 <head>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
 <script type="text/javascript">
-$(document).on('dom:loaded', function() {
-  var socket = new WebSocket('ws://<%= HOST %>:<%= WEBSOCKET_PORT %>');
-  var log = $('log');
-  socket.onmessage = function(msg) {
-    log.value += msg.data + "\n";
-    $('last_message_status').innerHTML = 'Last message received at ' + (new Date());
-    log.scrollTop = log.scrollHeight;
-  };
-  
-  var input = $('code');
-  var submitCode = function() {
-    socket.send(input.value);
-  };
-  
-  $('submit').on('click', submitCode);
-  
-  var controlPressed = false;
-  $('code').on('keyup', function(e){
-    if(e.which == 17) controlPressed = false;
-  });
-  $('code').on('keydown', function(e) {
-    controlPressed = e.ctrlKey || e.metaKey || e.which == 17 || e.which == 157 || e.which == 91;
-    var enterPressed = e.which == 13;
-    if(controlPressed && enterPressed) {
-      submitCode();
-      $('code_sent_status').innerHTML = 'Sent at ' + (new Date());
-      return false;
+$(function(){
+    var socket = new WebSocket('ws://<%= HOST %>:<%= WEBSOCKET_PORT %>');
+    var log = $('log');
+    socket.onmessage = function(msg) {
+      log.value += msg.data + "\n";
+      $('last_message_status').innerHTML = 'Last message received at ' + (new Date());
+      log.scrollTop = log.scrollHeight;
     };
 
+    var input = $('code');
+    var submitCode = function() {
+      socket.send(input.value);
+    };
+
+    $('submit').on('click', submitCode);
+
+    var controlPressed = false;
+    $('code').on('keyup', function(e){
+      if(e.which == 17) controlPressed = false;
+    });
+    $('code').on('keydown', function(e) {
+      controlPressed = e.ctrlKey || e.metaKey || e.which == 17 || e.which == 157 || e.which == 91;
+      var enterPressed = e.which == 13;
+      if(controlPressed && enterPressed) {
+        submitCode();
+        $('code_sent_status').innerHTML = 'Sent at ' + (new Date());
+        return false;
+      };
+
+    });
+
   });
-  
 });
 </script>
 <style type="text/css">
