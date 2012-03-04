@@ -24,6 +24,7 @@ module LogServer
   end
 
   def receive_data data
+    # puts "[TCP] receive_data #{data}"
     $clients.each { |client| client.send data }
   end
   
