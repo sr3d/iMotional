@@ -7,6 +7,7 @@
 //
 
 #import "FacebookTestViewController.h"
+#import "JSON.h"
 
 @interface FacebookTestViewController()
 -(void)connectToFacebook;
@@ -93,6 +94,9 @@
 }
 -(void)gotMe:(NSDictionary *)usr{
     label.text=[usr objectForKey:@"name"];
+    SBJsonWriter *jsonWriter=[SBJsonWriter new];
+    NSString *jsonString=[jsonWriter stringWithObject:usr];
+    NSLog(@"JSON String is %@",jsonString);
     NSLog(@"usr is %@",[usr description]);
 }
 @end
