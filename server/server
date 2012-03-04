@@ -68,7 +68,8 @@ EventMachine.run do
   
   
   puts "=================="
-  puts "Web Console locates at:     #{HOST}:#{WEBSERVER_PORT}"
-  puts "Logging Server locates at:  #{HOST}:#{LOGSERVER_PORT}"
+  puts "Web Console locates at:         http://#{HOST}:#{WEBSERVER_PORT}"
+  puts "WebSocket locates at:           ws://#{HOST}:#{WEBSERVER_PORT}"
+  puts "TCP Logging Server locates at:  #{HOST}:#{LOGSERVER_PORT}"
   puts "=================="
 end

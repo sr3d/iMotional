@@ -4,25 +4,33 @@ require 'socket'
 
 include Math
 
-server = TCPSocket.new 'localhost', '8484'
+# host = 'localhost'
+# port = '8484'
+host = 'marrily.com'
+port = '8484'
+
+server = TCPSocket.new host, port
 
 degree = 0
 
 x0 = 200
 y0 = 200
 r  = 50
-FPS = 2
+FPS = 20.0
 
-while(true)
-  degree += 10
-  if(degree > 360) 
-    degree = 0
-  end
+loop do
+  degree += 20
+  degree = degree % 360
+  # if(degree > 360) 
+  #   degree = 0
+  # end
+  
   x = x0 + Math.cos( degree * Math::PI / 180 ) * r
   y = y0 + Math.sin( degree * Math::PI / 180 ) * r
   server.puts [x,y].join(",")
   
   # puts degree.to_s + " -- " + [x,y].join(",")
 
-  sleep(1/FPS)
+  sleep(1.0/ FPS)
+  
 end
