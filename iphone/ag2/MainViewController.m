@@ -180,12 +180,17 @@
 	{
         
         CMAcceleration cma = [[[self motionManager] deviceMotion] userAcceleration];
-        CMAcceleration gma = [[[self motionManager] deviceMotion] gravity];        
-        NSLog(@"ACCELEROMETER: %f,%f,%f", acceleration.x,acceleration.y,acceleration.z);
-        NSLog(@"DEVICEMOTION: %f,%f,%f",cma.x+gma.x, cma.y+gma.y, cma.z);
+        CMAcceleration gma = [[[self motionManager] deviceMotion] gravity];
+        CMRotationRate rma = [[[self motionManager] deviceMotion] rotationRate];        
         
-//        [self sendcmd:[NSString stringWithFormat:@"%f,%f,%f\r\n",acceleration.x,acceleration.y,acceleration.z]];
-        [self sendcmd:[NSString stringWithFormat:@"%f,%f,%f\r\n",cma.x, cma.y, cma.z]];        
+        NSLog(@"ACCELEROMETER: \n%f,%f,%f", acceleration.x,acceleration.y,acceleration.z);
+        NSLog(@"DEVICEMOTION USERACCELERATION: \n%f,%f,%f", cma.x, cma.y, cma.z);
+        NSLog(@"DEVICEMOTION GRAVITY ACCELERATION: \n%f,%f,%f", gma.x,gma.y,gma.z);
+        NSLog(@"DEVICEMOTION ROTATIONRATE: \n%f,%f,%f", rma.x,rma.y,rma.z);
+        NSLog(@"LOWPASS ACCELERATION: \n%f,%f,%f", filter.x,filter.y,filter.z);
+        
+//      [self sendcmd:[NSString stringWithFormat:@"%f,%f,%f\r\n",acceleration.x,acceleration.y,acceleration.z]];
+        //[self sendcmd:[NSString stringWithFormat:@"%f,%f,%f\r\n",cma.x, cma.y, cma.z]];        
 		[filter addAcceleration:acceleration];
 		[unfiltered addX:acceleration.x y:acceleration.y z:acceleration.z];
 		[filtered addX:filter.x y:filter.y z:filter.z];
