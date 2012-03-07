@@ -107,9 +107,9 @@
 
 - (BOOL) connect
 {
-    NSString *hostname= @"marrily.com"; //[defaults stringForKey:@"hostname"];
+    NSString *hostname= @"192.168.1.6"; //[defaults stringForKey:@"hostname"];
     
-    NSHost *host=[NSHost hostWithName:hostname];
+    NSHost *host=[NSHost hostWithAddress:hostname];
     BOOL result = NO;
     
     if (host) {
