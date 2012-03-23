@@ -102,17 +102,22 @@ double Clamp(double v, double min, double max)
 
 -(void)addAcceleration:(UIAcceleration*)accel
 {
+    [self addAcceleration:accel.x withY:accel.y withZ:accel.z];
+}
+
+-(void)addAcceleration:(UIAccelerationValue)_x withY:(UIAccelerationValue)_y withZ:(UIAccelerationValue)_z
+{
 	double alpha = filterConstant;
 	
 	if(adaptive)
 	{
-		double d = Clamp(fabs(Norm(x, y, z) - Norm(accel.x, accel.y, accel.z)) / kAccelerometerMinStep - 1.0, 0.0, 1.0);
+		double d = Clamp(fabs(Norm(x, y, z) - Norm(_x, _y, _z)) / kAccelerometerMinStep - 1.0, 0.0, 1.0);
 		alpha = (1.0 - d) * filterConstant / kAccelerometerNoiseAttenuation + d * filterConstant;
 	}
 	
-	x = accel.x * alpha + x * (1.0 - alpha);
-	y = accel.y * alpha + y * (1.0 - alpha);
-	z = accel.z * alpha + z * (1.0 - alpha);
+	x = _x * alpha + x * (1.0 - alpha);
+	y = _y * alpha + y * (1.0 - alpha);
+	z = _z * alpha + z * (1.0 - alpha);
 }
 
 -(NSString*)name
@@ -139,21 +144,26 @@ double Clamp(double v, double min, double max)
 
 -(void)addAcceleration:(UIAcceleration*)accel
 {
+    [self addAcceleration:accel.x withY:accel.y withZ:accel.z];
+}
+
+-(void)addAcceleration:(UIAccelerationValue)_x withY:(UIAccelerationValue)_y withZ:(UIAccelerationValue)_z
+{
 	double alpha = filterConstant;
 	
 	if(adaptive)
 	{
-		double d = Clamp(fabs(Norm(x, y, z) - Norm(accel.x, accel.y, accel.z)) / kAccelerometerMinStep - 1.0, 0.0, 1.0);
+		double d = Clamp(fabs(Norm(x, y, z) - Norm(_x, _y, _z)) / kAccelerometerMinStep - 1.0, 0.0, 1.0);
 		alpha = d * filterConstant / kAccelerometerNoiseAttenuation + (1.0 - d) * filterConstant;
 	}
 	
-	x = alpha * (x + accel.x - lastX);
-	y = alpha * (y + accel.y - lastY);
-	z = alpha * (z + accel.z - lastZ);
+	x = alpha * (x + _x - lastX);
+	y = alpha * (y + _y - lastY);
+	z = alpha * (z + _z - lastZ);
 	
-	lastX = accel.x;
-	lastY = accel.y;
-	lastZ = accel.z;
+	lastX = _x;
+	lastY = _y;
+	lastZ = _z;
 }
 
 -(NSString*)name

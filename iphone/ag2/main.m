@@ -46,8 +46,16 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 */
 
 #import <UIKit/UIKit.h>
+#import <sys/signal.h>
+
+void report_signal(int sig) {
+    NSLog(@"Signal received: %d", sig);
+}
 
 int main(int argc, char *argv[]) {
+    
+    
+    
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
 	UIApplicationMain(argc, argv, nil, nil);
 	[pool release];

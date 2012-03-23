@@ -50,7 +50,7 @@
 #import "AccelerometerFilter.h"
 #import <CoreMotion/CoreMotion.h>
 
-#define kUpdateFrequency	60.0
+#define kUpdateFrequency	100.0
 #define kLocalizedPause		NSLocalizedString(@"Pause","pause taking samples")
 #define kLocalizedResume	NSLocalizedString(@"Resume","resume taking samples")
 
@@ -75,7 +75,7 @@
 	isPaused = NO;
 	useAdaptive = NO;
 	[self changeFilter:[LowpassFilter class]];
-	[[UIAccelerometer sharedAccelerometer] setUpdateInterval:5.0 / kUpdateFrequency];
+	[[UIAccelerometer sharedAccelerometer] setUpdateInterval:1.0 / kUpdateFrequency];
 	[[UIAccelerometer sharedAccelerometer] setDelegate:self];
 	
 	[unfiltered setIsAccessibilityElement:YES];
@@ -107,9 +107,10 @@
 
 - (BOOL) connect
 {
-    NSString *hostname= @"marrily.com"; //[defaults stringForKey:@"hostname"];
     
-    NSHost *host=[NSHost hostWithName:hostname];
+    NSString *hostname= @"169.254.130.98"; //[defaults stringForKey:@"hostname"];
+    
+    NSHost *host=[NSHost hostWithAddress:hostname];
     BOOL result = NO;
     
     if (host) {
@@ -178,17 +179,21 @@
 	// Update the accelerometer graph view
 	if(!isPaused)
 	{
-        
-        CMAcceleration cma = [[[self motionManager] deviceMotion] userAcceleration];
-        CMAcceleration gma = [[[self motionManager] deviceMotion] gravity];        
+            
+//        CMAcceleration cma = [[[self motionManager] deviceMotion] userAcceleration];
+//        CMAcceleration gma = [[[self motionManager] deviceMotion] gravity];        
+//        [self sendcmd:[NSString stringWithFormat:@"%f,%f,%f\r\n",cma.x, cma.y, cma.z]];  
         NSLog(@"ACCELEROMETER: %f,%f,%f", acceleration.x,acceleration.y,acceleration.z);
-        NSLog(@"DEVICEMOTION: %f,%f,%f",cma.x+gma.x, cma.y+gma.y, cma.z);
+//        NSLog(@"DEVICEMOTION: %f,%f,%f",cma.x+gma.x, cma.y+gma.y, cma.z);
+//        NSLog(@"interval=%lf", [UIAccelerometer sharedAccelerometer].updateInterval);
         
-//        [self sendcmd:[NSString stringWithFormat:@"%f,%f,%f\r\n",acceleration.x,acceleration.y,acceleration.z]];
-        [self sendcmd:[NSString stringWithFormat:@"%f,%f,%f\r\n",cma.x, cma.y, cma.z]];        
-		[filter addAcceleration:acceleration];
+             
+		[filter addAcceleration:acceleration.x withY:acceleration.y withZ:acceleration.z];
 		[unfiltered addX:acceleration.x y:acceleration.y z:acceleration.z];
 		[filtered addX:filter.x y:filter.y z:filter.z];
+
+//        [self sendcmd:[NSString stringWithFormat:@"%f,%f,%f\r\n",acceleration.x,acceleration.y,acceleration.z]];
+        [self sendcmd:[NSString stringWithFormat:@"%f,%f,%f\r\n",filter.x, filter.y, filter.z]];  
 	}
 
 }

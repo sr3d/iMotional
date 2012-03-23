@@ -56,6 +56,7 @@
 
 // Add a UIAcceleration to the filter.
 -(void)addAcceleration:(UIAcceleration*)accel;
+-(void)addAcceleration:(UIAccelerationValue)_x withY:(UIAccelerationValue)_y withZ:(UIAccelerationValue)_z;
 
 @property(nonatomic, readonly) UIAccelerationValue x;
 @property(nonatomic, readonly) UIAccelerationValue y;
