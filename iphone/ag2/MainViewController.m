@@ -107,9 +107,14 @@
 
 - (BOOL) connect
 {
+<<<<<<< HEAD
     
     NSString *hostname= @"169.254.130.98"; //[defaults stringForKey:@"hostname"];
     
+=======
+    NSString *hostname= @"192.168.1.6"; //[defaults stringForKey:@"hostname"];
+    
+>>>>>>> baf96583c183d547154e88b131f8009eeccf3000
     NSHost *host=[NSHost hostWithAddress:hostname];
     BOOL result = NO;
     
@@ -179,6 +184,7 @@
 	// Update the accelerometer graph view
 	if(!isPaused)
 	{
+<<<<<<< HEAD
             
 //        CMAcceleration cma = [[[self motionManager] deviceMotion] userAcceleration];
 //        CMAcceleration gma = [[[self motionManager] deviceMotion] gravity];        
@@ -189,6 +195,22 @@
         
              
 		[filter addAcceleration:acceleration.x withY:acceleration.y withZ:acceleration.z];
+=======
+        
+        CMAcceleration cma = [[[self motionManager] deviceMotion] userAcceleration];
+        CMAcceleration gma = [[[self motionManager] deviceMotion] gravity];
+        CMRotationRate rma = [[[self motionManager] deviceMotion] rotationRate];        
+        
+        NSLog(@"ACCELEROMETER: \n%f,%f,%f", acceleration.x,acceleration.y,acceleration.z);
+        NSLog(@"DEVICEMOTION USERACCELERATION: \n%f,%f,%f", cma.x, cma.y, cma.z);
+        NSLog(@"DEVICEMOTION GRAVITY ACCELERATION: \n%f,%f,%f", gma.x,gma.y,gma.z);
+        NSLog(@"DEVICEMOTION ROTATIONRATE: \n%f,%f,%f", rma.x,rma.y,rma.z);
+        NSLog(@"LOWPASS ACCELERATION: \n%f,%f,%f", filter.x,filter.y,filter.z);
+        
+//      [self sendcmd:[NSString stringWithFormat:@"%f,%f,%f\r\n",acceleration.x,acceleration.y,acceleration.z]];
+        //[self sendcmd:[NSString stringWithFormat:@"%f,%f,%f\r\n",cma.x, cma.y, cma.z]];        
+		[filter addAcceleration:acceleration];
+>>>>>>> baf96583c183d547154e88b131f8009eeccf3000
 		[unfiltered addX:acceleration.x y:acceleration.y z:acceleration.z];
 		[filtered addX:filter.x y:filter.y z:filter.z];
 
